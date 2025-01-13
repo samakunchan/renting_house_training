@@ -1,0 +1,30 @@
+name: renting_house_training
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  fonts:
+    - family: Raleway
+      fonts:
+        - asset: fonts/raleway/raleway-regular.ttf
+        - asset: fonts/raleway/raleway-light.ttf
+          weight: 300
+        - asset: fonts/raleway/raleway-medium.ttf
+          weight: 500
+        - asset: fonts/raleway/raleway-bold.ttf
+          weight: 700
+
+  uses-material-design: true
