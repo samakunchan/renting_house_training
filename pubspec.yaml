@@ -1,5 +1,5 @@
 name: renting_house_training
-description: "A new Flutter project."
+description: "A new Flutter project to train building ui."
 publish_to: 'none'
 version: 0.1.0
 
@@ -10,10 +10,14 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_native_splash: ^2.4.4
+  flutter_launcher_icons: ^0.14.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  very_good_analysis: ^6.0.0
 
 flutter:
   fonts:
