@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:renting_house_training/core/constantes.dart';
 import 'package:renting_house_training/pages/home_page.dart';
 
@@ -11,13 +12,29 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       theme: kThemeData,
-      home: const Scaffold(
-        body: SafeArea(
-          child: HomePage(),
+      initialRoute: '/home',
+      locale: const Locale('en', 'US'),
+      localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
+        DefaultWidgetsLocalizations.delegate,
+        DefaultMaterialLocalizations.delegate,
+      ],
+      getPages: [
+        GetPage(
+          name: '/home',
+          page: () => const HomePage(
+            key: ValueKey<String>('Main page'),
+          ),
+          transition: Transition.fade,
+          // ),
+          // GetPage(
+          //   name: '/detail',
+          //   page: () => const DetailsPage(
+          //     key: ValueKey<String>('Settings page'),
+          //   ),
         ),
-      ),
+      ],
     );
   }
 }
