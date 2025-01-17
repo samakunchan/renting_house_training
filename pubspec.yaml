@@ -1,7 +1,7 @@
 name: renting_house_training
 description: "A new Flutter project to train building ui."
 publish_to: 'none'
-version: 0.1.0
+version: 0.2.0
 
 environment:
   sdk: ^3.6.0
@@ -12,6 +12,14 @@ dependencies:
 
   flutter_native_splash: ^2.4.4
   flutter_launcher_icons: ^0.14.2
+  font_awesome_flutter: ^10.8.0
+  get: ^4.6.6
+  flutter_map: ^7.0.2
+  flutter_map_cancellable_tile_provider: ^3.0.2
+  flutter_map_geojson: ^1.0.8
+  latlong2: ^0.9.1
+  shared_preferences: ^2.3.5
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:
