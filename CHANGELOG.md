@@ -1,5 +1,25 @@
 # Renting House Training
 
+## 🚀 0.3.0 - 20/01/2025
+### Added
+
+- Added layout with transform scale widget to see the menu.
+- Added a custom class for the menu.
+- Added a list of custom menu in the constantes files.
+- Added menu in the layout.
+
+### Changed
+
+- Replacement method to stateless widgets.
+- Added "show more" button in detail description.
+- Added random number for gallery and limit.
+- Update pages with the new layout.
+
+### Fixed
+
+- Fix size for mobile in card header.
+- Fix size icons and text in result list view.
+
 
 ## 🚀 0.2.0 - 17/01/2025
 ### Added
