@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:renting_house_training/pages/layout_page.dart';
 import 'package:renting_house_training/widgets/app_maps.dart';
 import 'package:renting_house_training/widgets/card_header_details.dart';
 import 'package:renting_house_training/widgets/detail_description.dart';
@@ -11,24 +12,20 @@ class DetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Stack(
-          children: [
-            SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: LayoutBuilder(
-                  builder: (BuildContext context, BoxConstraints constraints) {
-                    return layout();
-                  },
-                ),
-              ),
+    return LayoutPage(
+      children: [
+        SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+                return layout();
+              },
             ),
-            const RentingBottomBar(),
-          ],
+          ),
         ),
-      ),
+        const RentingBottomBar(),
+      ],
     );
   }
 
