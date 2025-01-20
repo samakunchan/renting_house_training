@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:renting_house_training/core/themes/app_bar_theme.dart';
 import 'package:renting_house_training/core/themes/card_theme.dart';
 import 'package:renting_house_training/core/themes/color_scheme.dart';
@@ -46,7 +47,7 @@ TextStyle kTextChip = const TextStyle(
 
 final ThemeData kThemeData = ThemeData(
   appBarTheme: kAppBarTheme,
-  scaffoldBackgroundColor: kLightColor,
+  scaffoldBackgroundColor: kPrimaryColor,
   colorScheme: kColorScheme,
   textTheme: kTextTheme,
   textButtonTheme: kTextButtonThemeData,
@@ -128,3 +129,39 @@ final ButtonStyle kButtonStyle = ButtonStyle(
 
 const String kLoremIpsum =
     'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry‘s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.';
+
+final List<String> cities = List<String>.of([
+  'Jakarta',
+  'Paris',
+  'London',
+  'Washington',
+]);
+
+final List<String> buildings = List<String>.of([
+  'House',
+  'Apartment',
+  'Hotel',
+  'Villa',
+  'Camping',
+]);
+
+class AppMenu {
+  const AppMenu({required this.icon, required this.text});
+
+  final Icon icon;
+  final Text text;
+}
+
+final List<AppMenu> menus = List<AppMenu>.of(
+  [
+    const AppMenu(icon: Icon(Icons.home, color: kLightColor), text: Text('Home')),
+    const AppMenu(icon: Icon(Icons.person_rounded, color: kLightColor), text: Text('Profile')),
+    const AppMenu(icon: Icon(FontAwesomeIcons.locationDot, color: kLightColor), text: Text('Nearby')),
+    const AppMenu(icon: Icon(Icons.bookmark, color: kLightColor), text: Text('Bookmark')),
+    const AppMenu(icon: Icon(Icons.notifications_rounded, color: kLightColor), text: Text('Notifications')),
+    const AppMenu(icon: Icon(Icons.message, color: kLightColor), text: Text('Messages')),
+    const AppMenu(icon: Icon(Icons.settings, color: kLightColor), text: Text('Settings')),
+    const AppMenu(icon: Icon(Icons.help, color: kLightColor), text: Text('Help')),
+    const AppMenu(icon: Icon(Icons.logout, color: kLightColor), text: Text('Logout')),
+  ],
+);

@@ -1,7 +1,7 @@
 name: renting_house_training
 description: "A new Flutter project to train building ui."
 publish_to: 'none'
-version: 0.2.0
+version: 0.3.0
 
 environment:
   sdk: ^3.6.0
