@@ -1,8 +1,40 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:renting_house_training/core/constantes.dart';
 
-class DetailDescription extends StatelessWidget {
+class DetailDescription extends StatefulWidget {
   const DetailDescription({super.key});
+
+  @override
+  State<DetailDescription> createState() => _DetailDescriptionState();
+}
+
+class _DetailDescriptionState extends State<DetailDescription> {
+  bool showMore = true;
+  late final TextSpan span;
+
+  @override
+  void initState() {
+    span = TextSpan(
+      style: kBodyMedium,
+      children: <InlineSpan>[
+        const TextSpan(
+          text: kLoremIpsum,
+        ),
+        TextSpan(
+          text: ' Show more',
+          style: const TextStyle(color: kPrimaryColor),
+          recognizer: TapGestureRecognizer()
+            ..onTap = () {
+              setState(() {
+                showMore = !showMore;
+              });
+            },
+        ),
+      ],
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -11,14 +43,42 @@ class DetailDescription extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          /// Description
           Text('Description', style: kheadlineMedium),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16),
-            child: Text(
-              kLoremIpsum,
-              style: kBodyMedium,
+
+          if (showMore)
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: RichText(text: span),
+            )
+          else
+            RichText(
+              text: span,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
-          ),
+          if (!showMore)
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  showMore = !showMore;
+                });
+              },
+              child: RichText(
+                text: TextSpan(
+                  text: 'Show more',
+                  style: kBodyMedium.copyWith(color: kPrimaryColor),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      setState(() {
+                        showMore = !showMore;
+                      });
+                    },
+                ),
+              ),
+            ),
+
+          /// Info call
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16),
             child: Row(

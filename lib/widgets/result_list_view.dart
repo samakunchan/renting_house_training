@@ -33,8 +33,8 @@ class ResultListView extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: 120,
-          height: 120,
+          width: 90,
+          height: 90,
           child: Card(
             child: Image.network(
               'https://picsum.photos/seed/${{index + 1}}/200/300',
@@ -42,37 +42,45 @@ class ResultListView extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(width: 20),
+        const SizedBox(width: 8),
         SizedBox(
           height: 90,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text('Orchad House', style: kheadlineMedium),
               Text('20 000 / Year', style: kBodyMedium.copyWith(color: kTertiaryColor)),
               const Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 10,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(right: 16),
-                    child: Row(
-                      children: [
-                        Icon(FontAwesomeIcons.bed, color: Colors.grey),
-                        SizedBox(width: 16),
-                        Text('6 bedrooms'),
-                      ],
-                    ),
+                  Row(
+                    children: [
+                      Icon(
+                        FontAwesomeIcons.bed,
+                        color: Colors.grey,
+                        size: 13,
+                      ),
+                      SizedBox(width: 16),
+                      Text(
+                        '6 bedrooms',
+                        style: TextStyle(overflow: TextOverflow.fade),
+                      ),
+                    ],
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(right: 16),
-                    child: Row(
-                      children: [
-                        Icon(Icons.bathtub_outlined, color: Colors.grey),
-                        SizedBox(width: 16),
-                        Text('4 bathrooms'),
-                      ],
-                    ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.bathtub_outlined,
+                        color: Colors.grey,
+                        size: 13,
+                      ),
+                      SizedBox(width: 16),
+                      Text(
+                        '4 bathrooms',
+                        style: TextStyle(overflow: TextOverflow.fade),
+                      ),
+                    ],
                   ),
                 ],
               ),

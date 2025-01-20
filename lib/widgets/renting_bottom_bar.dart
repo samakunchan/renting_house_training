@@ -14,6 +14,7 @@ class RentingBottomBar extends StatelessWidget {
           height: 80,
           decoration: BoxDecoration(
             color: kLightColor,
+            borderRadius: BorderRadius.circular(20),
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
